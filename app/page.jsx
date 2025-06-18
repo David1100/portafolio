@@ -8,7 +8,7 @@ export default function Home() {
     <>
       <section className="h-screen flex justify-center flex-col items-center lg:px-20 px-10 gap-8 animate-slide-in-top" id="s_1">
         <p className="lg:text-4xl text-3xl text-center font-semibold"><span className="lg:text-5xl text-4xl">[</span> Hola mi nombre es <span className="text-blue-300">David Acevedo,</span> Desarrollador full stack <span className="lg:text-5xl text-4xl">]</span></p>
-        <p className="text-center lg:text-xl text-lg">"Como desarrollador full stack, domino tanto el desarrollo del front-end como del back-end, lo que me capacita para construir aplicaciones completas y eficaces, abordando todos los aspectos necesarios para cumplir con los requerimientos de los clientes desde el concepto hasta la entrega final."</p>
+        <p className="text-center lg:text-xl text-lg">&quot;Como desarrollador full stack, domino tanto el desarrollo del front-end como del back-end, lo que me capacita para construir aplicaciones completas y eficaces, abordando todos los aspectos necesarios para cumplir con los requerimientos de los clientes desde el concepto hasta la entrega final.&quot;</p>
       </section>
       <section className="lg:px-20 pt-28 px-10 animate-fade-in" id="s_2">
         <p className="border-white border-b-[2px] w-44 pb-2 flex items-center gap-3 mb-12 lg:text-xl text-lg"> <RiFileUserLine /> ACERCA DE MÍ</p>
