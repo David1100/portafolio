@@ -161,9 +161,9 @@ export default function Home() {
               Si tienes alguna pregunta, inquietud o simplemente quieres charlar sobre un proyecto, no dudes en contactarme. Estoy aquí para ayudarte y espero poder colaborar contigo pronto.
             </h1>
             <div className="flex flex-col gap-2">
-              <strong className="text-blue-300">Email:</strong> <a href="mailto:acevdo22@hotmail.com"> acevdo22@hotmail.com </a>
-              <strong className="text-blue-300">Whatsapp:</strong> <a href="https://wa.me/573175600116
-" target="_blank"> 3175600116 </a>
+              <strong className="text-blue-300">Email:</strong> <a href='mailto:acevdo22@hotmail.com'> acevdo22@hotmail.com </a>
+              <strong className="text-blue-300">Whatsapp:</strong> <a href='https://wa.me/573175600116
+' target='_blank'> 3175600116 </a>
             </div>
           </div>
         </div>
