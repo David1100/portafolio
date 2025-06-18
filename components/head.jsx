@@ -13,7 +13,7 @@ export default function Header() {
 
      return (
           <nav className="fixed w-full lg:px-20 px-8 py-5 flex justify-between items-center z-20">
-               <div className="text-4xl font-bold"><span className="text-blue-300">[D]</span>dev</div>
+               <div className="text-4xl font-bold animate-blurred-fade-in"><span className="text-blue-300">[D]</span>dev</div>
                <div className="flex gap-10 items-center">
                     <ul className="hidden lg:flex gap-2">
                          <li>

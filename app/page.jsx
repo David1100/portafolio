@@ -6,18 +6,18 @@ import Projects from "@/components/projects";
 export default function Home() {
   return (
     <>
-      <section className="h-screen flex justify-center flex-col items-center lg:px-20 px-10 gap-8" id="s_1">
+      <section className="h-screen flex justify-center flex-col items-center lg:px-20 px-10 gap-8 animate-slide-in-top" id="s_1">
         <p className="lg:text-4xl text-3xl text-center font-semibold"><span className="lg:text-5xl text-4xl">[</span> Hola mi nombre es <span className="text-blue-300">David Acevedo,</span> Desarrollador full stack <span className="lg:text-5xl text-4xl">]</span></p>
         <p className="text-center lg:text-xl text-lg">"Como desarrollador full stack, domino tanto el desarrollo del front-end como del back-end, lo que me capacita para construir aplicaciones completas y eficaces, abordando todos los aspectos necesarios para cumplir con los requerimientos de los clientes desde el concepto hasta la entrega final."</p>
       </section>
-      <section className="lg:px-20 pt-28 px-10" id="s_2">
+      <section className="lg:px-20 pt-28 px-10 animate-fade-in" id="s_2">
         <p className="border-white border-b-[2px] w-44 pb-2 flex items-center gap-3 mb-12 lg:text-xl text-lg"> <RiFileUserLine /> ACERCA DE MÍ</p>
         <div className="grid grid-cols-4">
 
           <div className="col-span-1 items-center hidden lg:flex">
-            <Image className="rounded-md" src={'/imagenes/img_person.jpg'} width={250} height={250}></Image>
+            <Image className="rounded-md" src={'/imagenes/img_person.jpeg'} width={250} height={250}></Image>
           </div>
-          <div className="lg:col-span-3 col-span-4">
+          <div className="lg:col-span-3 col-span-4 ">
             <div className="flex justify-center gap-12">
               <div className="text-center mb-12">
                 <h1 className="lg:text-6xl text-5xl font-bold text-blue-300">5+</h1>
@@ -32,44 +32,48 @@ export default function Home() {
             <div>
               <p className="lg:text-xl text-lg">Trabajo con los siguientes lenguajes de programación:</p>
               <ul className="flex gap-3 my-3">
-                <li className="bg-[#33333375] p-2 rounded-lg flex flex-col justify-center items-center gap-1 w-20">
+                <li className="bg-[#33333375] p-2 rounded-lg flex flex-col justify-center items-center gap-1 w-20 hover:scale-105 transition-all">
                   <Image className="rounded-md" src={'/logos_web/html.png'} width={40} height={40}></Image>
                   <p className="text-xs">HTML5</p>
                 </li>
-                <li className="bg-[#33333375] p-2 rounded-lg flex flex-col justify-center items-center gap-1 w-20">
+                <li className="bg-[#33333375] p-2 rounded-lg flex flex-col justify-center items-center gap-1 w-20 hover:scale-105 transition-all">
                   <Image className="rounded-md" src={'/logos_web/css.png'} width={40} height={40}></Image>
                   <p className="text-xs">CSS3</p>
                 </li>
-                <li className="bg-[#33333375] p-2 rounded-lg flex flex-col justify-center items-center gap-1 w-20">
+                <li className="bg-[#33333375] p-2 rounded-lg flex flex-col justify-center items-center gap-1 w-20 hover:scale-105 transition-all">
                   <Image className="rounded-md" src={'/logos_web/php.png'} width={40} height={40}></Image>
                   <p className="text-xs">PHP</p>
                 </li>
-                <li className="bg-[#33333375] p-2 rounded-lg flex flex-col justify-center items-center gap-1 w-20">
+                <li className="bg-[#33333375] p-2 rounded-lg flex flex-col justify-center items-center gap-1 w-20 hover:scale-105 transition-all">
                   <Image className="rounded-md" src={'/logos_web/javascript.png'} width={40} height={40}></Image>
                   <p className="text-xs">JAVASCRIPT</p>
+                </li>
+                <li className="bg-[#33333375] p-2 rounded-lg flex flex-col justify-center items-center gap-1 w-20 hover:scale-105 transition-all">
+                  <Image className="rounded-md" src={'/logos_web/tailwincss.webp'} width={40} height={40}></Image>
+                  <p className="text-xs">TAILWINCSS</p>
                 </li>
               </ul>
             </div>
             <div>
               <p className="lg:text-xl text-lg">Se usar los siguientes Frameworks:</p>
               <ul className="flex gap-3 my-3">
-                <li className="bg-[#33333375] p-2 rounded-lg flex flex-col justify-center items-center gap-1 w-20">
+                <li className="bg-[#33333375] p-2 rounded-lg flex flex-col justify-center items-center gap-1 w-20 hover:scale-105 transition-all">
                   <Image className="rounded-md" src={'/logos_web/laravel.png'} width={40} height={40}></Image>
                   <p className="text-xs">LARAVEL</p>
                 </li>
-                <li className="bg-[#33333375] p-2 rounded-lg flex flex-col justify-center items-center gap-1 w-20">
+                <li className="bg-[#33333375] p-2 rounded-lg flex flex-col justify-center items-center gap-1 w-20 hover:scale-105 transition-all">
                   <Image className="rounded-md" src={'/logos_web/yii.png'} width={40} height={40}></Image>
                   <p className="text-xs">YII2</p>
                 </li>
-                <li className="bg-[#33333375] p-2 rounded-lg flex flex-col justify-center items-center gap-1 w-20">
+                <li className="bg-[#33333375] p-2 rounded-lg flex flex-col justify-center items-center gap-1 w-20 hover:scale-105 transition-all">
                   <Image className="rounded-md" src={'/logos_web/vuejs.png'} width={40} height={40}></Image>
                   <p className="text-xs">VUEJS</p>
                 </li>
-                <li className="bg-[#33333375] p-2 rounded-lg flex flex-col justify-center items-center gap-1 w-20">
+                <li className="bg-[#33333375] p-2 rounded-lg flex flex-col justify-center items-center gap-1 w-20 hover:scale-105 transition-all">
                   <Image className="rounded-md" src={'/logos_web/react.png'} width={40} height={40}></Image>
                   <p className="text-xs">REACTJS</p>
                 </li>
-                <li className="bg-[#33333375] p-2 rounded-lg flex flex-col justify-center items-center gap-1 w-20">
+                <li className="bg-[#33333375] p-2 rounded-lg flex flex-col justify-center items-center gap-1 w-20 hover:scale-105 transition-all">
                   <Image className="rounded-md" src={'/logos_web/nextjs.png'} width={40} height={40}></Image>
                   <p className="text-xs">NEXTJS</p>
                 </li>
@@ -78,11 +82,11 @@ export default function Home() {
             <div>
               <p className="lg:text-xl text-lg">Y en base de datos:</p>
               <ul className="flex gap-3 my-3">
-                <li className="bg-[#33333375] p-2 rounded-lg flex flex-col justify-center items-center gap-1 w-20">
+                <li className="bg-[#33333375] p-2 rounded-lg flex flex-col justify-center items-center gap-1 w-20 hover:scale-105 transition-all">
                   <Image className="rounded-md" src={'/logos_web/mysql.png'} width={40} height={40}></Image>
                   <p className="text-xs">MYSQL</p>
                 </li>
-                <li className="bg-[#33333375] p-2 rounded-lg flex flex-col justify-center items-center gap-1 w-20">
+                <li className="bg-[#33333375] p-2 rounded-lg flex flex-col justify-center items-center gap-1 w-20 hover:scale-105 transition-all">
                   <Image className="rounded-md" src={'/logos_web/postgresql.webp'} width={40} height={40}></Image>
                   <p className="text-xs">POSTGREST</p>
                 </li>
@@ -153,11 +157,14 @@ export default function Home() {
             <h1 className="text-4xl">¡Trabajemos juntos!</h1>
           </div>
           <div className="flex flex-col gap-5">
-            <input type="text" className="outline-none bg-transparent border-white w-full py-2" placeholder="Nombre completo" />
-            <input type="text" className="outline-none bg-transparent border-white w-full py-2" placeholder="E-mail" />
-            <input type="text" className="outline-none bg-transparent border-white w-full py-2" placeholder="Whatsapp" />
-            <textarea className="outline-none bg-transparent border-white w-full py-2" placeholder="Mensaje"></textarea>
-            <button className="p-2 bg-blue-300 rounded-md text-gray-900">Contactar</button>
+            <h1>
+              Si tienes alguna pregunta, inquietud o simplemente quieres charlar sobre un proyecto, no dudes en contactarme. Estoy aquí para ayudarte y espero poder colaborar contigo pronto.
+            </h1>
+            <div className="flex flex-col gap-2">
+              <strong className="text-blue-300">Email:</strong> <a href="mailto:acevdo22@hotmail.com"> acevdo22@hotmail.com </a>
+              <strong className="text-blue-300">Whatsapp:</strong> <a href="https://wa.me/573175600116
+" target="_blank"> 3175600116 </a>
+            </div>
           </div>
         </div>
       </section>
