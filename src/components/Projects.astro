@@ -1,0 +1,17 @@
+---
+const { title, description, image, tags, link } = Astro.props;
+---
+
+<a href={link} target="_blank" class="flex flex-col ga-4 shadow-md p-4 rounded-lg hover:scale-105 transition-transform duration-300 shadow-secondary">
+    <img src={image} alt={title} class="rounded-lg"/>
+    <div class="mt-5">
+        <h1 class="font-bold">{title}</h1>
+        <p class="mt-2 text-text text-sm">{description}</p>
+    </div>
+
+    <ul class="flex gap-2 mt-4 text-[10px]">
+        {tags.map(( tag : string ) => (
+            <li class="bg-btn text-gray-900 rounded-full px-3 py-1">{tag}</li>
+        ))}
+    </ul>
+</a>

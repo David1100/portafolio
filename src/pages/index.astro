@@ -1,0 +1,189 @@
+---
+import Projects from "../components/Projects.astro";
+import Layout from "../layouts/Layout.astro";
+
+const projects = [
+	{
+		title: "Vitro Multimarcas",
+		description:
+			"Empresa especializada en la comercialización, distribución y servicio de productos de diversas marcas reconocidas a nivel nacional e internacional.",
+		image: "projects/img-vitro.png",
+		link: "https://vitromultimarcas.com/",
+		tags: ["Wordpress", "Woocommerce"],
+	},
+	{
+		title: "Capacitate",
+		description:
+			"Plataforma inclusiva y de referencia, nacional e internacional en el ámbito de la educación en robótica y programación desde casa.",
+		image: "projects/img-capacitate.png",
+		link: "https://web.capacitate.com.co/",
+		tags: ["Astro", "react", "CSS", "Tailwind", "moodle"],
+	},
+	{
+		title: "Graphicon",
+		description:
+			"Expertos locales en instalación de señalización de primer nivel en Sídney (Australia).",
+		image: "projects/img-graphicon.png",
+		link: "https://graphicon.com.au/",
+		tags: ["Nextjs", "react", "Tailwind", "Mysql"],
+	},
+	{
+		title: "Miiplatillo",
+		description:
+			"Sistema de pedidos en línea para restaurantes que permite llevar un control eficiente de las órdenes y mejorar la experiencia del cliente.",
+		image: "projects/img-miplatillo.png",
+		link: "https://miplatillo.vercel.app",
+		tags: ["Nextjs", "react", "Tailwind", "Prisma", "Mysql"],
+	},
+	{
+		title: "Cu4rto Producciones",
+		description:
+			"Tu socio creativo en el mundo de la publicidad y producción audiovisual.",
+		image: "projects/img-cu4rto.png",
+		link: "https://cu4rtoproducciones.com/",
+		tags: ["Wordpress", "Elementor", "CSS"],
+	},
+	{
+		title: "Camila Oviedo",
+		description:
+			"En Camila Oviedo creemos que cada paso cuenta. Nuestros zapatos con piezas únicas, hechas a mano por artesanos colombianos.",
+		image: "projects/img-camilaoviedo.png",
+		link: "https://camilaoviedo.com/",
+		tags: ["Astro", "Tailwind"],
+	},
+];
+
+const experiences = [
+	{
+		icon: "/icons/code.svg",
+		title: "Frontend",
+		details: [
+			"React & Next.js",
+			"Astro",
+			"Vue",
+			"Tailwind CSS",
+			"JavaScript & TypeScript",
+		],
+	},
+	{
+		icon: "/icons/database.svg",
+		title: "Backend",
+		details: [
+			"Node.js & Express",
+			"php (Laravel,yii2,symfony)",
+			"Postgrest",
+			"Mysql",
+		],
+	},
+	{
+		icon: "/icons/design.svg",
+		title: "Desing",
+		details: [
+			"Figma",
+			"Interfas de usuario (UI) Diseño",
+			"Experiencia de usuario (UX) ",
+		],
+	},
+];
+
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+	<section class="mt-5 px-4 lg:px-0">
+		<div class="grid grid-cols-6 gap-2 items-center justify-between">
+			<div class="text-balance lg:col-span-4 col-span-6">
+				<h1 class="font-bold text-6xl text-balance drop-shadow-md">
+					David Acevedo, Desarrollador Full Stack
+				</h1>
+				<p class="text-gray-500 mt-4 text-lg text-balance drop-shadow-md">
+					Como desarrollador full stack, domino tanto el desarrollo
+					del front-end como del back-end, lo que me capacita para
+					construir aplicaciones completas y eficaces, abordando todos
+					los aspectos necesarios para cumplir con los requerimientos
+					de los clientes desde el concepto hasta la entrega final.
+				</p>
+			</div>
+			<div
+				class="col-span-2 rounded-full w-60 h-60 relative bg-white overflow-hidden hidden lg:block drop-shadow-2xl drop-shadow-btn"
+			>
+				<img
+					src="/david_avatar.webp"
+					class="w-full h-full object-contain "
+					alt="David, Imagen de Perfil"
+				/>
+			</div>
+		</div>
+		<div class="flex gap-5 items-center mt-4">
+			<a href="#projects"
+				class="bg-btn px-5 py-3 text-gray-950 rounded-full text-sm font-bold hover:scale-105 transition-all cursor-pointer"
+				>Mis proyectos</a
+			>
+			<a href="#contact" class="hover:text-btn hover:scale-105 transition-all">Contacto</a>
+		</div>
+	</section>
+	<section class="px-4 lg:px-0" id="projects">
+		<h1 class="text-xl font-bold">Mis proyectos</h1>
+		<div class="grid lg:grid-cols-3 grid-cols-1 gap-4 mt-6 animate-slide-out-bottom transition-all">
+			{
+				projects.map((project) => (
+					<Projects
+						title={project.title}
+						description={project.description}
+						image={project.image}
+						link={project.link}
+						tags={project.tags}
+					/>
+				))
+			}
+		</div>
+	</section>
+	<section class="px-4 lg:px-0">
+		<h1 class="text-xl font-bold">Mis habilidades y servicios</h1>
+		<div class="grid lg:grid-cols-3 grid-cols-1 gap-4 mt-6">
+			{
+				experiences.map((experience) => (
+					<div class="bg-secondary px-6 py-8 rounded-lg shadow-secondary animate-slide-out-bottom transition-all">
+						<h2 class="font-bold text-lg flex gap-2 items-center">
+							<img src={experience.icon} class="w-10" alt="" />{" "}
+							{experience.title}
+						</h2>
+						<ul class="list-disc list-inside space-y-1 text-gray-400 text-sm mt-5">
+							{
+								experience.details.map((detail) => (
+									<li class="hover:animate-slide-out-right transition-all">{detail}</li>
+								))
+							}
+						</ul>
+					</div>
+				))
+			}
+		</div>
+	</section>
+	<section class="px-4 lg:px-0">
+		<h1 class="text-xl font-bold">Sobre mí</h1>
+		<p class="text-gray-500 mt-4 text-lg text-balance drop-shadow-md">
+			Soy David Acevedo, un desarrollador full stack apasionado por la
+			creación de soluciones digitales innovadoras. Con experiencia en
+			tecnologías como React, Next.js, Astro y Node.js, me especializo en
+			desarrollar aplicaciones web completas que ofrecen experiencias
+			excepcionales a los usuarios. Mi enfoque se centra en la calidad del
+			código, la optimización del rendimiento y la colaboración efectiva
+			con equipos multidisciplinarios. Siempre estoy buscando nuevos retos
+			para seguir creciendo profesionalmente y contribuir al éxito de los
+			proyectos en los que participo.
+		</p>
+	</section>
+	<section class="px-4 lg:px-0" id="contact">
+		<h1 class="text-xl font-bold">¡Trabajemos juntos!</h1>
+		<a href="https://api.whatsapp.com/send/?phone=573175600116&text=Hola+Quiero+Cotizar+una+web&type=phone_number&app_absent=0" class="mt-8 bg-green-400 w-full py-4 rounded-lg text-gray-950 font-bold lg:text-lg hover:scale-105 transition-all flex lg:flex-row flex-col items-center justify-center px-8 lg:px-0 text-balance text-sm gap-2">
+			<span>
+				<img src="/icons/whatsapp.svg" class="lg:w-12 w-8 inline-block mr-2" alt="" />
+			</span>
+			Contáctame para discutir cómo puedo ayudarte a llevar tu proyecto
+			al siguiente nivel.
+		</a>
+	</section>
+</Layout>

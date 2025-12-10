@@ -1,0 +1,30 @@
+@import "tailwindcss";
+@plugin "@midudev/tailwind-animations";
+
+:root {
+  --color-primary: #101F22;
+  --color-secondary: #234248;
+  --color-text: #85B0B9;
+  --color-accent: #13C8EC;
+  --font-base: 'Helvetica Neue', Arial, sans-serif;
+}
+
+@theme {
+    --color-secondary: var(--color-secondary);
+    --color-btn: var(--color-accent);
+    --color-text: var(--color-text);
+}
+
+body{
+    font-family: var(--font-base);
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+button{
+  cursor: pointer;
+}
+
+html {
+  scroll-behavior: smooth;
+}
