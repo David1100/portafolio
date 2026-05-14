@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect fill="#0a0f14" width="800" height="600"/>
+  <defs>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff3d8a;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#00e5ff;stop-opacity:0.2"/>
+    </linearGradient>
+  </defs>
+  <rect fill="url(#grad2)" width="800" height="600"/>
+  <text x="400" y="280" font-family="Arial, sans-serif" font-size="48" fill="#ff3d8a" text-anchor="middle" font-weight="bold">Inducortes</text>
+  <text x="400" y="340" font-family="Arial, sans-serif" font-size="24" fill="#85B0B9" text-anchor="middle">Industria Metalúrgica</text>
+  <text x="400" y="400" font-family="Arial, sans-serif" font-size="18" fill="#5a7a85" text-anchor="middle">Corte y Doblado de Acero</text>
+  <rect x="350" y="440" width="100" height="60" fill="none" stroke="#ff3d8a" stroke-width="2"/>
+  <path d="M350 470 L450 470" stroke="#ff3d8a" stroke-width="2"/>
+</svg>
