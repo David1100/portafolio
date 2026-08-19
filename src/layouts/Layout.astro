@@ -10,7 +10,7 @@ import "../styles/global.css";
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content="David Acevedo - Full Stack Developer. Construyo experiencias digitales excepcionales con tecnología de punta." />
     <meta name="theme-color" content="#0a0f14" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/jpeg" href="/logodavid.svg" />
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,10 +20,119 @@ import "../styles/global.css";
     <title>David Acevedo | Full Stack Developer</title>
   </head>
   <body class="antialiased">
+    <!-- Rain of tech logos background -->
+    <div id="tech-rain" class="fixed inset-0 pointer-events-none overflow-hidden z-0"></div>
+    
     <Header />
-    <main>
+    <main class="relative z-10">
       <slot />
     </main>
+    
+    <script is:inline>
+      // @ts-nocheck
+      // Tech icons - add your SVG files to /public/tech-icons/
+      const techIcons = [
+        'react', 'nextjs', 'astro', 'vue', 'typescript', 'javascript',
+        'nodejs', 'php', 'laravel', 'postgresql', 'mysql', 'docker',
+        'aws', 'figma', 'git', 'tailwind', 'vercel', 'wordpress',
+        'mongodb', 'redis', 'graphql', 'html5', 'css3'
+      ];
+      
+      const rainContainer = document.getElementById('tech-rain');
+      let particles = [];
+      const particleCount = 35;
+      const iconSize = 40;
+      const loadedImages = {};
+      
+      // Preload images
+      function preloadImages() {
+        techIcons.forEach(icon => {
+          const img = new Image();
+          img.src = `/tech-icons/${icon}.svg`;
+          loadedImages[icon] = img;
+        });
+      }
+      
+      preloadImages();
+      
+      class Particle {
+        constructor() {
+          this.reset();
+          this.y = Math.random() * window.innerHeight - window.innerHeight;
+        }
+        
+        reset() {
+          this.x = Math.random() * window.innerWidth;
+          this.y = -iconSize;
+          this.size = iconSize * (Math.random() * 0.5 + 0.5);
+          this.speed = Math.random() * 0.8 + 0.3;
+          this.opacity = Math.random() * 0.12 + 0.03;
+          this.rotation = 0;
+          this.rotationSpeed = (Math.random() - 0.5) * 1.5;
+          this.iconKey = techIcons[Math.floor(Math.random() * techIcons.length)];
+          this.sway = Math.random() * Math.PI * 2;
+          this.swaySpeed = Math.random() * 0.02 + 0.01;
+          this.swayAmount = Math.random() * 30 + 10;
+        }
+        
+        update() {
+          this.y += this.speed;
+          this.rotation += this.rotationSpeed;
+          this.sway += this.swaySpeed;
+          
+          if (this.y > window.innerHeight + 50) {
+            this.reset();
+          }
+        }
+        
+        draw(ctx) {
+          const img = loadedImages[this.iconKey];
+          if (!img || !img.complete) return;
+          
+          ctx.save();
+          ctx.translate(this.x + Math.sin(this.sway) * this.swayAmount, this.y);
+          ctx.rotate(this.rotation * Math.PI / 180);
+          ctx.globalAlpha = this.opacity;
+          ctx.drawImage(img, -this.size / 2, -this.size / 2, this.size, this.size);
+          ctx.restore();
+        }
+      }
+      
+      function init() {
+        const canvas = document.createElement('canvas');
+        canvas.id = 'tech-canvas';
+        rainContainer.appendChild(canvas);
+        
+        const ctx = canvas.getContext('2d');
+        
+        function resize() {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+        }
+        
+        resize();
+        window.addEventListener('resize', resize);
+        
+        for (let i = 0; i < particleCount; i++) {
+          particles.push(new Particle());
+        }
+        
+        function animate() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          
+          particles.forEach(particle => {
+            particle.update();
+            particle.draw(ctx);
+          });
+          
+          requestAnimationFrame(animate);
+        }
+        
+        animate();
+      }
+      
+      init();
+    </script>
   </body>
 </html>
 

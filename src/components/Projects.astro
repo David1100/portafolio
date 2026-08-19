@@ -5,9 +5,28 @@ interface Props {
   image: string;
   link: string;
   tags: string[];
+  phase: number;
+  status: string;
 }
 
-const { title, description, image, tags, link } = Astro.props;
+const { title, description, image, tags, link, phase, status } = Astro.props;
+
+const statusLabels: Record<string, string> = {
+  ideation: "Ideación",
+  design: "Diseño",
+  development: "Desarrollo",
+  launched: "Lanzado",
+};
+
+const statusColors: Record<string, string> = {
+  ideation: "bg-purple-500",
+  design: "bg-yellow-500",
+  development: "bg-blue-500",
+  launched: "bg-green-500",
+};
+
+const currentStatus = statusLabels[status] || status;
+const colorClass = statusColors[status] || "bg-accent";
 ---
 
 <a 
@@ -16,7 +35,7 @@ const { title, description, image, tags, link } = Astro.props;
   rel="noopener noreferrer"
   class="glass-card group relative flex flex-col rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2"
 >
-  <div class="project-image-container aspect-video">
+  <div class="project-image-container aspect-video relative">
     <img 
       src={image} 
       alt={title} 
@@ -24,6 +43,12 @@ const { title, description, image, tags, link } = Astro.props;
       loading="lazy"
     />
     <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+    
+    {/* Status badge */}
+    <div class="absolute top-3 left-3 flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/50 backdrop-blur-sm">
+      <span class={`w-2 h-2 rounded-full ${colorClass} animate-pulse`}></span>
+      <span class="text-xs text-white font-medium">{currentStatus}</span>
+    </div>
   </div>
   
   <div class="p-6 relative">
@@ -35,6 +60,20 @@ const { title, description, image, tags, link } = Astro.props;
     <p class="text-text-muted text-sm leading-relaxed line-clamp-2">
       {description}
     </p>
+    
+    {/* Progress bar */}
+    <div class="mt-4">
+      <div class="flex justify-between items-center mb-1.5">
+        <span class="text-xs text-text-muted">Progreso</span>
+        <span class="text-xs text-accent font-medium">{phase}%</span>
+      </div>
+      <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+        <div 
+          class={`h-full ${colorClass} rounded-full transition-all duration-500`}
+          style={`width: ${phase}%`}
+        ></div>
+      </div>
+    </div>
     
     <div class="flex flex-wrap gap-2 mt-4">
       {tags.map((tag: string) => (
